@@ -1,2 +1,3 @@
-# qurananalyst01
+# QuranAnalyst
+
 Code base for QuranAnalyst
