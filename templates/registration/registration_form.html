@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="homemsg">
+	{% if msg_body %}
+		<div class="title">{{msg_body}}</div>
+	{% endif %}
+</div>
+
+<form action="/accounts/register/" method="POST">
+{% csrf_token %}
+	<fieldset>
+		<legend>Post Your comment about this verse</legend>
+		<table>
+			{{ form.as_table }}
+		</table>
+		
+		<div>
+			<input type="submit" value="Submit" />
+		</div>
+	</fieldset>
+</form>
+
+
+{% endblock %}

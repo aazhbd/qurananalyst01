@@ -1,0 +1,716 @@
+/**
+* Basic Template.
+*
+* @author        ArticulateLogic Labs
+* @author        Abdullah Al Zakir Hossain, Email: aazhbd@yahoo.com 
+* @copyright     Copyright (c)2013 ArticulateLogic Labs
+* @link          http://www.articulatelogic.com
+* @since         Version 1.0
+*  
+*/
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    /*width: 1024px;*/
+	font-family: Tahoma, HelveticaNeue-Light, Verdana, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight: normal;
+    margin: 0 auto;
+    /*background: #e1e7eb;*/
+    background: #f1f1f1;
+    /*background: #fff url('images/bg.gif') repeat-x;*/
+    position: relative;
+}
+
+div {
+    overflow:hidden;
+    height:auto;
+}
+
+h1 {
+    font-family:"Lithos";
+    font-size:1.8em;
+    font-weight:bolder;
+    color:#333;
+}
+
+h1 a {
+    text-decoration:none;
+    color:#333;
+}
+
+h4, .title{
+	padding-top: 10px;
+	padding-bottom: 15px;
+	font-family: Tahoma, sans-serif;
+	font-size: 1.6em;
+	font-weight: normal;
+}
+
+h2, h2 a{
+    font-size:1.2em;
+}
+
+h3, h3 a{
+    font-size:1em;
+}
+
+ul{
+    list-style:none;
+}
+
+p{
+    text-align:justify;
+    font-size: normal;
+    margin-bottom: 20px;
+}
+
+p a{
+    color: #1D62B3;
+}
+
+a {
+    text-decoration: none;
+    color: #1D62B3;
+}
+
+a:hover {
+    background: none;
+    color: #E43C15;
+}
+
+img {
+    border:none;
+}
+/* navigation */
+
+#navigatemenu {
+    float:left;
+    padding: 15px 0px 15px 0px;
+}
+
+#nav {
+    padding:0px 0;
+    margin:0;
+    height:22px;
+    /*font:1em Tahoma, Geneva, sans-serif;*/
+}
+
+#nav ul{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+#nav li {
+    float:left;
+    list-style:none;
+}
+
+#nav li a {
+    color:#333;
+    padding:3px 6px 3px 6px;
+    margin: 0;
+    text-decoration:none;
+    display:block;
+}
+
+#nav li a.active {
+    background-color:#eee;
+    color:#444;
+    text-decoration:none;
+}
+
+#nav ul li{
+    display: block;
+    position: relative;
+    float: left;
+    margin:0;
+    padding:0;
+}
+
+#nav li ul{
+    display: none;
+}
+
+#nav ul li a{
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border-top: 1px solid #fff;
+    border: 1px solid #333333;
+    white-space: nowrap;
+    text-decoration: none;
+    float: left; /*\*/ float:none;
+    padding: 2px 10px 2px 5px;
+}
+
+#nav ul li a:hover{
+    background: #ddd;
+    color:#FFFFFF;
+    font-weight:bold;
+}
+
+#nav li:hover ul{
+    display: block;
+    position: absolute;
+    font-weight:bold;
+}
+
+#nav li:hover li{
+    float: none;
+}
+
+#nav ul li a span{
+    font-weight: normal;
+    color: #67707a;
+}
+
+#nav li:hover a{
+    color:#222;
+    background:#ccc;
+}
+
+#nav li:hover li a:hover{
+    background: #999;
+}
+
+/* navigation ends here */
+
+
+/* reports starts here */
+
+#reports{
+    color:#000;
+    width:auto;
+    height:20px;
+    background:#cfc;
+    border: 1px solid #0f0;
+    padding:5px;
+    margin:3px;
+}
+
+/* reports ends here */
+
+/* error starts here */
+
+#errors{
+    color:#000;
+    width:auto;
+    height:20px;
+    background:#FCC;
+    border: 1px solid #F00;
+    padding:5px;
+    margin:3px;
+}
+
+.error {
+    color:#f00;
+    font-weight:bold;
+    width:auto;
+    height:20px;
+    padding:5px;
+    margin:3px;
+}
+
+/* error ends here */
+
+
+/* logo starts here */
+
+#logo{
+	float: left;
+    height:40px;
+	padding:6px 0 6px 0;
+}
+
+/* logo ends here */ 
+
+
+/* banner starts here */
+
+#contentheader {
+	width: 100%;
+/*	background: #FCFCFC;*/
+	/*border-bottom: 1px solid silver;*/
+	box-shadow: 0 1px 4px 0 #ACACAC;
+	height: 80px;
+	margin-bottom: 10px;
+}
+
+#banner{
+    float:left;
+    height: auto;
+    padding: 10px 2px 10px 2px;
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+#search {
+	float:right;
+	padding: 10px 0 10px 0;
+	width:45%;
+	height:50px;
+	margin:0;
+}
+
+#frmsearch {
+	float:left;
+	width: 100%;
+}
+
+#frmsearch #searchIn {
+	color: #999;
+	float:left;
+	height: 30px;
+	width: 82%;
+	box-shadow: 0 1px 3px 0 #ACACAC;
+	padding-left: 10px;
+}
+
+#frmsearch #searchSub {
+	float: left;
+	margin:0;
+	height: 32px;
+	width: 15%;
+	box-shadow: 0 1px 3px 0 #ACACAC;
+}
+
+/* banner ends here */
+
+
+#topright{
+    float: right;
+    width: 15%;
+    padding:15px;
+    text-align: right;
+    font-size: normal;
+}
+
+#topright a {
+	font-size: 11px;
+}
+
+
+/* contentbody starts here */
+
+#contentbody{
+	padding: 10px;
+	text-align: center;
+	margin: 0 auto;
+	background: #fff;
+	box-shadow: 0 1px 4px 0 #ACACAC;
+	/*border: 1px solid #eee;*/
+	border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    width: 1024px;
+}
+
+/* contentbody ends here */
+
+
+/* title starts here */
+
+.title{
+    color: #1D62B3;
+    font-size: 16px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+/* title ends here */
+
+
+/* subtitle starts here */
+
+.subtitle{
+    color: #777;
+    font-style: italic;
+    font-size: 1em;
+    padding: 1em;
+}
+
+/* subtitle ends here */
+
+
+
+/* body starts here */
+
+.body{
+    color:#000;
+    text-align: justify;
+    padding: 5px;
+    line-height: 1.2em;
+    min-height: 300px;
+}
+
+#lselector {
+	collapse:collapse;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+#lselector td {
+	padding: 10px;
+}
+
+#authorlist {
+    min-height: 100px;
+    max-height: 200px;
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+
+
+#backlinks {
+	float: none;
+	font-size:small;
+	height: 25px;
+	margin: 0;
+	width: 100%;
+}
+
+#id_ctext {
+	width: 75%;
+	height: 120px;
+}
+
+/* body ends here */
+
+
+/* footer starts here*/
+
+#footer {
+    text-align:center;
+    border-top:1px solid #bbb;
+    /*box-shadow: 0 -1px 3px 1px #ACACAC;*/
+    margin:0 auto;
+    background: #fff no-repeat;
+    float: none;
+	height: 40px;
+	padding: 10px;
+	width: 1024px;
+}
+
+#footer p{
+    text-align: center;
+}
+
+/* footer ends here*/
+
+
+/* verse translation formatting */
+
+.verseBox {
+	width: 100%;
+	min-height: 30px;
+	padding: 6px;
+	line-height: 24px;
+	background: #eee;
+	margin: 4px;
+}
+
+.commentBox {
+	background: #eeb;
+	width: 100%;
+	min-height: 30px;
+	padding: 6px;
+	line-height: 24px;
+	margin: 2px;
+}
+
+.verseNum {
+	float: left;
+	min-width:  30px;
+	padding: 6px;
+	font-size: 18px;
+	font-weight: bold;
+	background: #ddd;
+	text-align:center;
+	vertical-align:text-bottom;
+	border-radius: 1em;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+}
+
+.verseTxt {
+	float: left;
+	width: 92%;
+	padding: 6px;
+	font-size: 1.2em;
+}
+
+.verseAuth {
+	float: left;
+	/*min-width:20px;*/
+	padding:3px;
+	text-align: left;
+	font-weight: normal;
+	font-style:oblique;
+	font-size: 12px;
+}
+
+.linkBtn {
+	float: right;
+	/*min-width:10%;*/
+	padding:6px;
+	font-weight: bold;
+}
+
+.linkBtn a {
+	/*background: #ccc;*/
+	padding: 6px;
+}
+
+.linkBtn a:hover {
+	background: #eee;
+}
+
+.transV {
+	float: none;
+	width: 100%;
+}
+
+#searchmore a {
+	float: right;
+	padding: 10px;
+	font-size: 22px;
+	height: 30px;
+}
+
+/* verse translation formatting end */
+
+
+/*Admin Panel CSS Start*/
+
+.adminpanel{
+    border:1px solid #aaa;
+    background:#fff;
+    padding:10px;
+    padding-bottom:25px;
+    padding-top:25px;
+    margin:1px;
+    border:1px solid #ccc;
+}
+
+.tblmain{
+    border-collapse:collapse;
+    width:98%;
+}
+
+.tblheader{
+    background:#EDF4FA repeat-x;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12em;
+    font-weight:bolder;
+    text-align:center;
+    color:#000;
+    padding:5px;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;	
+}
+
+
+
+.imgbox{
+    background:#CCC;
+    padding:10px;
+    width:50px;
+    height:40px;
+    float:left;
+}
+
+#imglinks{
+    text-decoration: none;
+    border:solid #ccc;
+}
+
+#imglinks:hover{
+    text-decoration: none;
+    border:solid #eee;
+}
+
+.blanksp{
+    width:20px;
+    height:80px;
+    padding:10px;
+    background:#aaa;
+    float:left;
+}
+
+.txtbox{
+    background:#369;
+    padding:10px;
+    width:300px;
+    height:100px;
+    text-align:center;
+}
+
+.txtbox:hover{
+    background:#69C;
+    padding:10px;
+    width:300px;
+
+    height:40px;
+    text-align:center;
+}
+
+.linegap{
+    background:#FFF;
+    height:10px;
+    width:100%;
+}
+
+.tblhead{
+    background:#aaa;
+    color:#fff;
+    font-weight:bolder;
+}
+
+.normlinks{
+    color:#fff;
+    text-decoration:underline;
+    text-align:left;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight:normal;
+    margin-left:5px;
+    margin-bottom:10px;
+    line-height:24px;
+    display:block;
+    width:200px;
+    padding:2px;
+}
+
+.normlinks:hover{
+    text-decoration:none;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:12px;
+    font-weight:normal;
+    margin-left:5px;
+    margin-bottom:10px;
+    line-height:24px;
+    background:#999;
+    color:#FFF;
+    display:block;
+    width:200px;
+    padding:2px;
+}
+
+.tblfield{
+    width:80px;
+    float:left;
+    padding:5px;
+    font-size: 0.8em;
+}
+
+.subinfo{
+    font:Arial, Helvetica, sans-serif italic;
+    font-size:12px;
+    text-align:left;
+    padding: 3px;
+    float:left;
+    width: auto;
+}
+
+.topmenu{
+    font:Arial, Helvetica, sans-serif italic;
+    font-size:12px;
+    font-weight: bolder;
+    text-align:left;
+    padding: 5px;
+    float:left;
+    width: 97%;
+    background-color: #D8E2ED;
+    border: 1px solid #ccc;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;    
+}
+
+.topmenu a{
+    font-weight: bolder;
+    text-align:left;
+    padding: 5px;
+    border: 1px solid #D8E2ED;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+}
+
+.topmenu a:hover{
+    font-weight: bolder;
+    text-align:left;
+	padding: 5px;
+    border: 1px solid #D8E2ED;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    background: #fff;
+    color:#69C; /*DAF1E8*/
+}
+
+#selMenu{
+    font-weight: bolder;
+    text-align:left;
+    padding: 5px;
+    border: 1px solid #eee;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #69C;
+    background: #fff;    
+}
+
+.adminbox{
+    font:Arial, Helvetica, sans-serif italic;
+    font-size:14px;
+    font-weight: bolder;
+	float:left;
+    margin:5px;
+    padding:5px;
+    border: 1px solid #eef;
+    border-radius: 0.8em;
+    -moz-border-radius: 0.8em;
+    -webkit-border-radius: 0.8em;
+    color: #E8F3F4;
+    background: #fff;
+}
+
+.adminblock{
+    float:left;
+    width: 20%;
+    margin:10px;
+    padding:10px;
+    border: 1px solid #eef;
+    border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    color: #1D62B3;
+    background: #fff;
+    display: block;    
+}
+
+.adminblock:hover{
+    float:left;
+    width: 20%;
+    margin:10px;
+    padding:10px;
+    border: 1px solid #eee;
+    border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    color:#333;
+	font-weight:bolder;
+    background: #D8E2ED;
+    display: block;    
+}
+/*Admin Panel CSS End*/

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="homemsg">
+	{% if msg_body %}
+		<div class="title">{{msg_body}}</div>
+	{% endif %}
+</div>
+
+<h3>Your registration information are now saved. Check your email in your mailbox, 
+there should be an email sent with a link that you can click and activate your account.</h3>
+
+{% endblock %}

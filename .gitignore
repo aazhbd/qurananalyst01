@@ -1,0 +1,7 @@
+/database.db
+*.pyc
+/pyenv
+*.db
+.DS_Store
+._.DS_Store
+

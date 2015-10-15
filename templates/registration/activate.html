@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}{% load i18n %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="homemsg">
+	{% if msg_body %}
+		<div class="title">{{msg_body}}</div>
+	{% endif %}
+</div>
+
+<h3>Your account is now active! You may login using the following link.</h3>
+<a href="/accounts/login/?next=/home/">Login</a>
+
+
+{% endblock %}

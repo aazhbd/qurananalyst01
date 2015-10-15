@@ -1,0 +1,13 @@
+This mail has been sent to you because you have registered into QuranAnalyst.ArticulateLogic.com recently, otherwise you may ignore this.
+
+Your activation key: {{ activation_key }}
+
+Please use this link to activate your account:
+
+http://qurananalyst.articulatelogic.com/accounts/activate/{{ activation_key }}/
+
+After activation you can login to the site:
+
+http://qurananalyst.articulatelogic.com/accounts/login/
+
+If this fails to activate your account for any reason then contact the site admin at qurananalyst@gmail.com and your account would be activated manually.

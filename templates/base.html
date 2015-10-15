@@ -1,0 +1,133 @@
+{% load static %}{% load i18n %}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="Content-language" content="en" />
+	
+	<meta name="author" content="Quran Analyst, aazhbd, aazhbd@yahoo.com" />
+	<meta name="Copyright" content="Quran Analyst, aazhbd, aazhbd@yahoo.com" />
+	
+	<meta name="description" content="{% block description %} {% endblock %} this site takes a humble attempt to provide a set of facilities for comprehensive research on Quran and available materials as well as allow discussions for better understanding." />
+	<meta name="keywords" content="quran, translations,Islam, teachings of quran, surah, surat, languages, meaning, understanding quran {% block keywords %} {% endblock %}" />
+	<meta name="robots" content="index, follow, I followed" />
+    
+    <title>Quran Analyst - {% block title %} Home {% endblock %}</title>
+    
+    <script type="text/javascript" src="{% get_static_prefix %}scripts/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="{% get_static_prefix %}scripts/datatable/js/jquery.dataTables.min.js"></script>
+    
+    <link rel="icon" type="image/png" href="{% get_static_prefix %}images/logo.png">
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="{% get_static_prefix %}css/zstyle.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="{% get_static_prefix %}css/forms.css" />
+	<!--[if lte IE 6]>
+	<link href="{% get_static_prefix %}css/msie.css" type="text/css" rel="stylesheet" media="screen,projection" />
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" media="screen" href="{% get_static_prefix %}scripts/datatable/css/jquery.dataTables.css" />
+</head>
+
+<body>
+	<div id="contentheader">
+		<div id="banner">
+			<a href="/">
+				<img src="{% get_static_prefix %}images/logob.png" id="logo" />
+			</a>
+			
+			<div id="navigatemenu">
+			{% block nav %}
+				<ul id="nav">
+					<li><a href="/home">Home</a></li>
+					<li><a href="/discussions">Discussions</a></li>
+					<li><a href="/info">Info</a></li>
+				</ul>
+			{% endblock %}
+			</div>
+			
+			<div id="search">
+				<form class="frmsearch" method="post" id="frmsearch" action="/search/">
+				{% csrf_token %}
+					<span>
+						<input type="text" class="fsearch" value="Search keywords in Quran, in any language." name="search" id="searchIn" onclick="this.value=''">
+						<input type="submit" class="fsearch" value="Search" name="submit" id="searchSub">
+					</span>
+				</form>
+			</div>
+		</div>
+		
+		<div id="topright">
+		{% if not user.is_authenticated %}
+			Join in to participate in discussions.
+			<a href="/accounts/login/?next={{ request.path }}">Login</a> |
+			<a href="/accounts/register/">Register</a>
+		{% endif %}
+		
+		{% if user.is_authenticated %}
+			
+			{% if user.first_name != "" or user.last_name != "" %}
+				{{user.first_name}} {{user.last_name}}
+			{% else %}
+				{{user.username}}
+			{% endif %}
+			<br/>
+			<a href="/discussions">Participate in discussions</a>
+			<br/>
+			<a href="/accounts/logout/">Logout</a>
+		{% endif %}
+		</div>
+	</div>
+    
+    <div id="contentbody">
+    
+    {% if messages %}
+    {% for message in messages %}
+    	<div id="reports">
+    		{{message}}
+    	</div>
+    {% endfor %}
+    {% endif %}
+    
+	    <div class="body">
+	    {% block content %}
+	    	This page is under construction.
+	    {% endblock %}
+	    </div>
+    </div>
+    
+    <div id="footer">
+    	<p>
+    		&copy; 2013 <a href="mailto:aazhbd@yahoo.com">aazhbd</a> | <a href="/info">Info</a> | <a href="http://articulatelogic.com/">ArticulateLogic.com</a>
+    	</p>
+    </div>
+    <script type="text/javascript">
+    	var _gaq = _gaq || [];
+    	_gaq.push(['_setAccount', 'UA-42773083-1']);
+    	_gaq.push(['_trackPageview']);
+    	
+    	(function() {
+    		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    	})();
+    </script>
+</body>
+<script type="text/javascript">
+	$('body').append($('<div class="ajax-loading"/>').css({'background-image': 'url("{% get_static_prefix %}images/loading.gif")', position: 'fixed', top: 0, left: 0, height: '100%', width: '100%', 'z-index': 1000, 'background-color': "rgb( 255, 255, 255, .8 )", 'background-position': '50% 50%', 'background-repeat': 'no-repeat'}).hide());
+	$(document).ajaxStart(function() { $('.ajax-loading').show(); }).ajaxStop(function() { $('.ajax-loading').hide(); });
+</script>
+</html>
+
+
+<!--
+/**
+* Quran Analyst.
+*
+* @author        ArticulateLogic Labs
+* @author        Abdullah Al Zakir Hossain, Email: aazhbd@yahoo.com 
+* @copyright     Copyright (c)2013 ArticulateLogic Labs
+* @link          http://www.articulatelogic.com
+* @since         Version 1.0
+*  
+*/
+-->
