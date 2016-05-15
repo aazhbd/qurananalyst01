@@ -40,7 +40,7 @@ def chapter(request, **Args):
     
     chapterNum = str(Args.get('chap')).strip('/')
     cNum = str(chapterNum)
-    context.update({ 'cnum' : cNum, })
+    context.update({ 'cnum' : int(cNum), })
     
     chName = Chapter.objects.get(pk=cNum)
     context.update({ 'msg_body' : "All verses of the chapter " + cNum + ": " + chName.transliteration + " " + chName.arabic_name + " (" + chName.english_name + ")", })
@@ -93,7 +93,7 @@ def verse(request, **Args):
         comment_form = VerseCommentForm(initial=cf_init)
     
     
-    context.update({ 'cnum' : cNum, 'vnum' : vNum })
+    context.update({ 'cnum' : int(cNum), 'vnum' : int(vNum) })
     
     context.update({ 'msg_body' : "Chapter " + cNum + " Verse " + vNum, })
     
@@ -119,6 +119,23 @@ def verse(request, **Args):
     
     if(cSuccess):
         context.update({ 'messages' : ['Your comment has been posted successfully'], 'cSuccess' : cSuccess, })
+    
+    
+    cdetail = Chapter.objects.get(pk=chapterNum)
+    if cdetail.total_verses:
+        total_verse = cdetail.total_verses
+        
+        pnext = False
+        if (int(verseNum) < int(total_verse)):
+            pnext = True
+            
+        pprevious = False
+        if int(verseNum) > 1:
+            pprevious = True
+        
+        context.update({ 'pnext' : pnext, 'pprevious' : pprevious, })
+    else:
+        context.update({ 'pnext' : False, 'pprevious' : False, })
     
     return render_to_response("verse.html", context_instance=context)
 
@@ -221,7 +238,15 @@ def discussions(request):
     
     comments = Comment.objects.all().order_by('-date_published')
     
-    context.update({ 'comments' : comments, })
+    #context.update({ 'comments' : comments, })
+    
+    comment_data = []
+    for c in comments:
+    	ff = Q(vnum=c.vnum) & Q(cnum=c.cnum)
+    	numcomment = Comment.objects.filter(ff).count()
+    	comment_data.append({'comment' : c, 'count' : numcomment })
+    	
+    context.update({ 'comments' : comment_data, })
     
     return render_to_response("discussions.html", context_instance=context)
 

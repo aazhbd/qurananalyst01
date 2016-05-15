@@ -14,18 +14,21 @@
 
 <h4>Recent Discussions</h4>
 
-<div class="subtitle">To reply to comments, view more details:</div>
+<div class="subtitle">Reply to comments in the details of the verse</div>
 
 {% for c in comments %}
 
-<div class="commentBox" style="{% if c.comment_type == 'Question' %}background:#eee; {% elif c.comment_type == 'Explanation' %} background:#eef; {% endif %}">
-	<span class="verseTxt">
-		Posted by {% if c.user.first_name != "" or c.user.last_name != "" %} {{c.user.first_name}} {{c.user.last_name}} {% else %} {{c.user}} {% endif %} : {{c.ctext|truncatechars:100}}
-	</span>
-	<div class="verseAuth">
-		As a {{c.comment_type}} on verse <a href="/{{c.vnum}}/{{c.cnum}}/">{{c.vnum}}:{{c.cnum}}</a> posted on {{c.date_published}}
+<div class="commentBox">
+	<div class="verseTxt">
+		Posted by {% if c.comment.user.first_name != "" or c.comment.user.last_name != "" %} {{c.comment.user.first_name}} {{c.comment.user.last_name}} {% else %} {{c.comment.user}} {% endif %} : 
+		
+		<a href="/{{c.comment.cnum}}/{{c.comment.vnum}}/">{{c.comment.ctext|truncatechars:100}}</a>
 	</div>
-	<span class="linkBtn"><a href="/{{c.cnum}}/{{c.vnum}}/">More Details</a></span>
+	<div class="verseAuth">
+		<span style="{% if c.comment.comment_type == 'Question' %}background:#edf; {% elif c.comment.comment_type == 'Explanation' %} background:#efd; {% endif %}">As a {{c.comment.comment_type}} on verse <a href="/{{c.vnum}}/{{c.cnum}}/">{{c.comment.cnum}}:{{c.comment.vnum}}</a> posted on {{c.comment.date_published}} 
+		and there are {{c.count}} comment(s) on this verse.</span>
+	</div>
+	<span class="linkBtn"><a href="/{{c.comment.cnum}}/{{c.comment.vnum}}/">More Details</a></span>
 </div>
 
 {% endfor %}

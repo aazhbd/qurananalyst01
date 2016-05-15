@@ -418,7 +418,7 @@ img {
 }
 
 .commentBox {
-	background: #eeb;
+	background: #eef;
 	width: 100%;
 	min-height: 30px;
 	padding: 6px;
@@ -454,7 +454,7 @@ img {
 	text-align: left;
 	font-weight: normal;
 	font-style:oblique;
-	font-size: 12px;
+	font-size: 14px;
 }
 
 .linkBtn {
